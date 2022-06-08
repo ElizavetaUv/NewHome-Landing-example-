@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+:root {
+  --main-blue: #4b4a94;
+  --dark-blue: #181732;
+}
+
+/* Nav bar */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  color: white;
+}
+
+h1.logo {
+  font-family: "El Messiri";
+  font-size: 8vmin;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 2em;
+}
+
+a {
+  text-decoration: none;
+  font-size: 3vmin;
+  color: white;
+}
+
+.active a {
+  text-decoration: underline;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(assets/start_page.jpg);
+  background-size: cover;
+}
+
+.header-content {
+  margin-bottom: 70px;
+  color: white;
+  text-align: center;
+}
+
+.header-content h2 {
+  margin-bottom: 30px;
+  font-size: 6vmin;
+}
+
+.btn {
+  padding: 8px 25px;
+  background-color: var(--main-blue);
+  border-radius: 30px;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: none;
+  width: 40px;
+  cursor: pointer;
+}
+
+/* Types of accommodation */
+
+section {
+  margin: 80px auto;
+  width: 80%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.row .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row .col img {
+  width: 90%;
+}
+
+.typesOfAccommodation {
+  margin-top: 50px;
+}
+
+.typesOfAccommodation p {
+  margin: 30px auto;
+  color: var(--dark-blue);
+  font-size: 2.5vmin;
+}
+
+/* Temporary accommodation */
+
+.temporaryAccommodation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(assets/temporary_accommodation.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.temporaryAccommodation-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 60%;
+  padding: 50px;
+  color: white;
+}
+
+.temporaryAccommodation-content h2 {
+  margin: 20px 0px;
+  font-size: 5vmin;
+  font-weight: 500;
+}
+
+.temporaryAccommodation-content .btn {
+  margin-top: 25px;
+}
+
+/* Popular countries */
+
+.popularCountries h2 {
+  margin-bottom: 30px;
+  color: var(--dark-blue);
+  font-size: 5vmin;
+  text-align: center;
+}
+
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.countries .country-card {
+  margin: 5px;
+  border: 2px solid var(--dark-blue);
+  width: 30%;
+  background-color: white;
+}
+
+.country-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.countries .country-card img {
+  width: 90%;
+}
+
+.countries .country-card p {
+  font-size: 3vmin;
+  color: var(--dark-blue);
+}
+
+/* Footer */
+
+footer {
+  padding: 3%;
+  width: 100%;
+  height: 20hv;
+  background-color: var(--main-blue);
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  font-size: 2vmin;
+}
+
+/* Mobile devices */
+
+@media only screen and (max-width: 850px) {
+  /* Header */
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: -900px;
+    border-bottom-right-radius: 30%;
+    background-color: var(--main-blue);
+    transition: all 0.5s ease;
+  }
+
+  .mobile-menu {
+    margin-top: 0px;
+  }
+
+  .nav-links li {
+    margin: 30px auto;
+  }
+
+  /* Types of accommodation */
+
+  .row {
+    flex-direction: column;
+  }
+
+  .row .col {
+    margin: 15px auto;
+  }
+
+  .col img {
+    max-width: 90%;
+  }
+
+  /* Countries */
+
+  .countries {
+    flex-direction: column;
+  }
+
+  .countries .country-card {
+    width: 90%;
+  }
+}
+
+/* Animations */
+
+.typesOfAccommodation img,
+.countries .country-card {
+  transition: transform 0.3s ease;
+}
+
+.typesOfAccommodation img:hover,
+.countries .country-card:hover {
+  transform: scale(1.2);
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--main-blue);
+  box-shadow: 2px 2px 5px var(--main-blue);
+}
